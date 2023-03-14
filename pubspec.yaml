@@ -1,6 +1,6 @@
 name: prisma_generator_helper
 description: Auxiliary packages to help quickly build Prisma generators.
-version: 0.0.0
+version: 1.0.0
 repository: https://github.com/odroe/prisma-generator-helper
 
 environment:
