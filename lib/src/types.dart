@@ -34,14 +34,17 @@ class EnvValue {
 
 /// Binary targets environtment value.
 @_jsonSerializable
-class BinaryTargetsEnvValue extends EnvValue {
-  @override
+class BinaryTargetsEnvValue {
+  /// Environtment name.
+  final String? fromEnvVar;
+
+  /// Hardcoded value.
   final String value;
 
   /// Create a new binary targets environtment value.
   const BinaryTargetsEnvValue({
     required this.value,
-    super.fromEnvVar,
+    this.fromEnvVar,
   });
 
   /// Create a new binary targets environtment value from a json map.
@@ -49,7 +52,6 @@ class BinaryTargetsEnvValue extends EnvValue {
       _$BinaryTargetsEnvValueFromJson(json);
 
   /// Convert the binary targets environtment value to a json map.
-  @override
   Map<String, dynamic> toJson() => _$BinaryTargetsEnvValueToJson(this);
 }
 
