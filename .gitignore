@@ -1,5 +1,6 @@
 pubspec.lock
 .packages
+.env*
 .dart_tool/
 build/
 node_modules/

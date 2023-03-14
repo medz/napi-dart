@@ -36,9 +36,9 @@ abstract class Generator {
     final controller = StreamController<String>();
 
     // Listen the output stream, write to stderr
-    controller.stream
-        .transform(const LineSplitter())
-        .listen((event) => stderr.writeln(event));
+    controller.stream.listen((event) {
+      stderr.writeln(event);
+    });
 
     final channel = StreamChannel<String>(input, controller.sink);
     final server = Server(channel);

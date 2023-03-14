@@ -1,5 +1,5 @@
 name: prisma_generator_helper
-description: A starting point for Dart libraries or applications.
+description: Auxiliary packages to help quickly build Prisma generators.
 version: 0.0.0
 
 environment:
