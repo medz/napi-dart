@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:prisma_generator_helper/prisma_generator_helper.dart';
 
 /// Example generator.

@@ -1,6 +1,6 @@
 # Prisma Generator helper
 
-Auxiliary packages to help quickly build Prisma generators.
+Prisma generator helper to quickly build Prisma generators.
 
 ## Installation
 
@@ -13,18 +13,23 @@ dart pub add prisma_generator_helper
 ```dart
 import 'package:prisma_generator_helper/prisma_generator_helper.dart';
 
-class MyGenerator extends Generator {
+/// Example generator.
+final class ExampleGenerator implements Handler {
   @override
-  FutureOr<void> onGenerate(GeneratorOptions options) {
-    /// ...
+  Future<void> onGenerate(GeneratorOptions options) async {
+    /// Implement the generator.
+    /// This method will be called when the generator is invoked.
+  }
+
+  @override
+  Future<GeneratorManifest> onManifest(GeneratorConfig config) async {
+    return GeneratorManifest(
+      prettyName: 'Example generator',
+    );
   }
 }
 
-main() async {
-  const generator = MyGenerator();
-
-  await generator.listen();
-}
+Future<void> main() => generator(ExampleGenerator());
 ```
 
 ## Sponsors
