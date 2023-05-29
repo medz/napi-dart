@@ -2,24 +2,20 @@ import 'dart:async';
 
 import 'package:prisma_generator_helper/prisma_generator_helper.dart';
 
-/// Defines a generator.
-class ExampleGenerator extends Generator {
-  const ExampleGenerator();
-
+/// Example generator.
+final class ExampleGenerator implements Handler {
   @override
-  FutureOr<GeneratorManifest?> onManifest(GeneratorConfig config) {
-    return GeneratorManifest(
-      prettyName: 'Example Generator',
-      version: '0.0.1',
-      defaultOutput: 'demo.dart',
-    );
+  Future<void> onGenerate(GeneratorOptions options) async {
+    /// Implement the generator.
+    /// This method will be called when the generator is invoked.
   }
 
   @override
-  FutureOr<void> onGenerate(GeneratorOptions options) {}
+  Future<GeneratorManifest> onManifest(GeneratorConfig config) async {
+    return GeneratorManifest(
+      prettyName: 'Example generator',
+    );
+  }
 }
 
-/// Creates a new generator instance.
-const generator = ExampleGenerator();
-
-FutureOr<void> main() => generator.listen();
+Future<void> main() => generator(ExampleGenerator());

@@ -341,7 +341,7 @@ class SchemaArgInputType with _$SchemaArgInputType {
 
 /// @see https://github.com/prisma/prisma/blob/main/packages/generator-helper/src/dmmf.ts#L136
 @freezed
-class ArgType with _$ArgType {
+sealed class ArgType with _$ArgType {
   const factory ArgType.string(String value) = _ArgTypeString;
   const factory ArgType.input(InputType value) = _ArgTypeInputType;
   const factory ArgType.enum_(SchemaEnum value) = _ArgTypeSchemaEnum;
@@ -460,7 +460,7 @@ class OutputTypeRef with _$OutputTypeRef {
 /// @see https://github.com/prisma/prisma/blob/main/packages/generator-helper/src/dmmf.ts#L181
 /// @see https://github.com/prisma/prisma/blob/main/packages/generator-helper/src/dmmf.ts#L186
 @freezed
-class OutputTypeRefType with _$OutputTypeRefType {
+sealed class OutputTypeRefType with _$OutputTypeRefType {
   const factory OutputTypeRefType.string(String value) =
       _OutputTypeRefTypeString;
   const factory OutputTypeRefType.output(OutputType value) =

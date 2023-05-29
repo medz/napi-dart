@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of prisma.dmmf;
+part of 'dmmf.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
