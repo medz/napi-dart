@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/odroe/prisma-generator-helper/compare/v1.1.0...v1.1.1) (2023-05-29)
+
+
+### Documentation
+
+* update readme ([460bb3f](https://github.com/odroe/prisma-generator-helper/commit/460bb3f5a2b12d858f8333c76f156e1fc918f765))
+
 ## [1.1.0](https://github.com/odroe/prisma-generator-helper/compare/v1.0.0...v1.1.0) (2023-05-29)
 
 
