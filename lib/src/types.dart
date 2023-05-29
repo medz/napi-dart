@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:prisma_dmmf/prisma_dmmf.dart';
+
+import '../dmmf.dart';
 
 part 'types.g.dart';
 
