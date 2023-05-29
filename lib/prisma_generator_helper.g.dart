@@ -9,7 +9,7 @@ part of 'prisma_generator_helper.dart';
 _$_GeneratorManifest _$$_GeneratorManifestFromJson(Map<String, dynamic> json) =>
     _$_GeneratorManifest(
       prettyName: json['prettyName'] as String?,
-      defaultOutput: json['defaultOutput'] as String?,
+      defaultOutput: json['defaultOutput'] as String? ?? '.',
       denylists: json['denylists'] == null
           ? null
           : DenyLists.fromJson(json['denylists'] as Map<String, dynamic>),

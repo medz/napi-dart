@@ -21,7 +21,7 @@ GeneratorManifest _$GeneratorManifestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GeneratorManifest {
   String? get prettyName => throw _privateConstructorUsedError;
-  String? get defaultOutput => throw _privateConstructorUsedError;
+  String get defaultOutput => throw _privateConstructorUsedError;
   DenyLists? get denylists => throw _privateConstructorUsedError;
   List<String>? get requiresGenerators => throw _privateConstructorUsedError;
   List<EngineType>? get requiresEngines => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$GeneratorManifest {
 class _$_GeneratorManifest implements _GeneratorManifest {
   const _$_GeneratorManifest(
       {this.prettyName,
-      this.defaultOutput,
+      this.defaultOutput = '.',
       this.denylists,
       final List<String>? requiresGenerators,
       final List<EngineType>? requiresEngines,
@@ -51,7 +51,8 @@ class _$_GeneratorManifest implements _GeneratorManifest {
   @override
   final String? prettyName;
   @override
-  final String? defaultOutput;
+  @JsonKey()
+  final String defaultOutput;
   @override
   final DenyLists? denylists;
   final List<String>? _requiresGenerators;
@@ -96,7 +97,7 @@ class _$_GeneratorManifest implements _GeneratorManifest {
 abstract class _GeneratorManifest implements GeneratorManifest {
   const factory _GeneratorManifest(
       {final String? prettyName,
-      final String? defaultOutput,
+      final String defaultOutput,
       final DenyLists? denylists,
       final List<String>? requiresGenerators,
       final List<EngineType>? requiresEngines,
@@ -109,7 +110,7 @@ abstract class _GeneratorManifest implements GeneratorManifest {
   @override
   String? get prettyName;
   @override
-  String? get defaultOutput;
+  String get defaultOutput;
   @override
   DenyLists? get denylists;
   @override

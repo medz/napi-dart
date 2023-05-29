@@ -30,8 +30,6 @@ Future<void> generator(Handler handler) async {
     final config = GeneratorConfig.fromJson(params.asMap.cast());
     final manifest = await handler.onManifest(config);
 
-    print(manifest.toJson());
-
     return {
       'manifest': manifest.toJson(),
     };
@@ -64,7 +62,7 @@ abstract interface class Handler {
 class GeneratorManifest with _$GeneratorManifest {
   const factory GeneratorManifest({
     String? prettyName,
-    String? defaultOutput,
+    @Default('.') String defaultOutput,
     DenyLists? denylists,
     List<String>? requiresGenerators,
     List<EngineType>? requiresEngines,
