@@ -130,25 +130,25 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$_EnvValueVariable _$$_EnvValueVariableFromJson(Map<String, dynamic> json) =>
-    _$_EnvValueVariable(
+_$EnvValueViaName _$$EnvValueViaNameFromJson(Map<String, dynamic> json) =>
+    _$EnvValueViaName(
       json['name'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_EnvValueVariableToJson(_$_EnvValueVariable instance) =>
+Map<String, dynamic> _$$EnvValueViaNameToJson(_$EnvValueViaName instance) =>
     <String, dynamic>{
       'name': instance.name,
       'runtimeType': instance.$type,
     };
 
-_$_EnvValueValue _$$_EnvValueValueFromJson(Map<String, dynamic> json) =>
-    _$_EnvValueValue(
+_$EnvValueViaValue _$$EnvValueViaValueFromJson(Map<String, dynamic> json) =>
+    _$EnvValueViaValue(
       json['value'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_EnvValueValueToJson(_$_EnvValueValue instance) =>
+Map<String, dynamic> _$$EnvValueViaValueToJson(_$EnvValueViaValue instance) =>
     <String, dynamic>{
       'value': instance.value,
       'runtimeType': instance.$type,

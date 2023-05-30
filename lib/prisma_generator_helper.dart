@@ -141,8 +141,8 @@ class GeneratorConfig with _$GeneratorConfig {
 /// @see https://github.com/prisma/prisma/blob/main/packages/generator-helper/src/types.ts#L44
 @freezed
 sealed class EnvValue with _$EnvValue {
-  const factory EnvValue.veriable(String name) = _EnvValueVariable;
-  const factory EnvValue.value(String value) = _EnvValueValue;
+  const factory EnvValue.env(String name) = EnvValueViaName;
+  const factory EnvValue.value(String value) = EnvValueViaValue;
 
   factory EnvValue.fromJson(Map<String, dynamic> json) =>
       _$EnvValueFromJson(json);
@@ -156,7 +156,7 @@ class _EnvValueConverter implements JsonConverter<EnvValue, Map> {
     if (json.containsKey('value') && json['value'] != null) {
       return EnvValue.value(json['value'] as String);
     } else if (json.containsKey('fromEnvVar') && json['fromEnvVar'] != null) {
-      return EnvValue.veriable(json['fromEnvVar'] as String);
+      return EnvValue.env(json['fromEnvVar'] as String);
     }
 
     throw ArgumentError.value(json, 'json', 'Invalid env value');
@@ -164,8 +164,10 @@ class _EnvValueConverter implements JsonConverter<EnvValue, Map> {
 
   @override
   Map toJson(EnvValue object) {
-    // TODO: implement toJson
-    throw UnimplementedError();
+    return switch (object) {
+      EnvValueViaName env => {'fromEnvVar': env.name},
+      EnvValueViaValue env => {'value': env.value},
+    };
   }
 }
 

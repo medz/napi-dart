@@ -462,10 +462,10 @@ abstract class _GeneratorConfig implements GeneratorConfig {
 
 EnvValue _$EnvValueFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
-    case 'veriable':
-      return _EnvValueVariable.fromJson(json);
+    case 'env':
+      return EnvValueViaName.fromJson(json);
     case 'value':
-      return _EnvValueValue.fromJson(json);
+      return EnvValueViaValue.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'EnvValue',
@@ -477,39 +477,39 @@ EnvValue _$EnvValueFromJson(Map<String, dynamic> json) {
 mixin _$EnvValue {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String name) veriable,
+    required TResult Function(String name) env,
     required TResult Function(String value) value,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String name)? veriable,
+    TResult? Function(String name)? env,
     TResult? Function(String value)? value,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? veriable,
+    TResult Function(String name)? env,
     TResult Function(String value)? value,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_EnvValueVariable value) veriable,
-    required TResult Function(_EnvValueValue value) value,
+    required TResult Function(EnvValueViaName value) env,
+    required TResult Function(EnvValueViaValue value) value,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EnvValueVariable value)? veriable,
-    TResult? Function(_EnvValueValue value)? value,
+    TResult? Function(EnvValueViaName value)? env,
+    TResult? Function(EnvValueViaValue value)? value,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EnvValueVariable value)? veriable,
-    TResult Function(_EnvValueValue value)? value,
+    TResult Function(EnvValueViaName value)? env,
+    TResult Function(EnvValueViaValue value)? value,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -518,12 +518,12 @@ mixin _$EnvValue {
 
 /// @nodoc
 @JsonSerializable()
-class _$_EnvValueVariable implements _EnvValueVariable {
-  const _$_EnvValueVariable(this.name, {final String? $type})
-      : $type = $type ?? 'veriable';
+class _$EnvValueViaName implements EnvValueViaName {
+  const _$EnvValueViaName(this.name, {final String? $type})
+      : $type = $type ?? 'env';
 
-  factory _$_EnvValueVariable.fromJson(Map<String, dynamic> json) =>
-      _$$_EnvValueVariableFromJson(json);
+  factory _$EnvValueViaName.fromJson(Map<String, dynamic> json) =>
+      _$$EnvValueViaNameFromJson(json);
 
   @override
   final String name;
@@ -533,36 +533,36 @@ class _$_EnvValueVariable implements _EnvValueVariable {
 
   @override
   String toString() {
-    return 'EnvValue.veriable(name: $name)';
+    return 'EnvValue.env(name: $name)';
   }
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String name) veriable,
+    required TResult Function(String name) env,
     required TResult Function(String value) value,
   }) {
-    return veriable(name);
+    return env(name);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String name)? veriable,
+    TResult? Function(String name)? env,
     TResult? Function(String value)? value,
   }) {
-    return veriable?.call(name);
+    return env?.call(name);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? veriable,
+    TResult Function(String name)? env,
     TResult Function(String value)? value,
     required TResult orElse(),
   }) {
-    if (veriable != null) {
-      return veriable(name);
+    if (env != null) {
+      return env(name);
     }
     return orElse();
   }
@@ -570,59 +570,59 @@ class _$_EnvValueVariable implements _EnvValueVariable {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_EnvValueVariable value) veriable,
-    required TResult Function(_EnvValueValue value) value,
+    required TResult Function(EnvValueViaName value) env,
+    required TResult Function(EnvValueViaValue value) value,
   }) {
-    return veriable(this);
+    return env(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EnvValueVariable value)? veriable,
-    TResult? Function(_EnvValueValue value)? value,
+    TResult? Function(EnvValueViaName value)? env,
+    TResult? Function(EnvValueViaValue value)? value,
   }) {
-    return veriable?.call(this);
+    return env?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EnvValueVariable value)? veriable,
-    TResult Function(_EnvValueValue value)? value,
+    TResult Function(EnvValueViaName value)? env,
+    TResult Function(EnvValueViaValue value)? value,
     required TResult orElse(),
   }) {
-    if (veriable != null) {
-      return veriable(this);
+    if (env != null) {
+      return env(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EnvValueVariableToJson(
+    return _$$EnvValueViaNameToJson(
       this,
     );
   }
 }
 
-abstract class _EnvValueVariable implements EnvValue {
-  const factory _EnvValueVariable(final String name) = _$_EnvValueVariable;
+abstract class EnvValueViaName implements EnvValue {
+  const factory EnvValueViaName(final String name) = _$EnvValueViaName;
 
-  factory _EnvValueVariable.fromJson(Map<String, dynamic> json) =
-      _$_EnvValueVariable.fromJson;
+  factory EnvValueViaName.fromJson(Map<String, dynamic> json) =
+      _$EnvValueViaName.fromJson;
 
   String get name;
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_EnvValueValue implements _EnvValueValue {
-  const _$_EnvValueValue(this.value, {final String? $type})
+class _$EnvValueViaValue implements EnvValueViaValue {
+  const _$EnvValueViaValue(this.value, {final String? $type})
       : $type = $type ?? 'value';
 
-  factory _$_EnvValueValue.fromJson(Map<String, dynamic> json) =>
-      _$$_EnvValueValueFromJson(json);
+  factory _$EnvValueViaValue.fromJson(Map<String, dynamic> json) =>
+      _$$EnvValueViaValueFromJson(json);
 
   @override
   final String value;
@@ -638,7 +638,7 @@ class _$_EnvValueValue implements _EnvValueValue {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String name) veriable,
+    required TResult Function(String name) env,
     required TResult Function(String value) value,
   }) {
     return value(this.value);
@@ -647,7 +647,7 @@ class _$_EnvValueValue implements _EnvValueValue {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String name)? veriable,
+    TResult? Function(String name)? env,
     TResult? Function(String value)? value,
   }) {
     return value?.call(this.value);
@@ -656,7 +656,7 @@ class _$_EnvValueValue implements _EnvValueValue {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String name)? veriable,
+    TResult Function(String name)? env,
     TResult Function(String value)? value,
     required TResult orElse(),
   }) {
@@ -669,8 +669,8 @@ class _$_EnvValueValue implements _EnvValueValue {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_EnvValueVariable value) veriable,
-    required TResult Function(_EnvValueValue value) value,
+    required TResult Function(EnvValueViaName value) env,
+    required TResult Function(EnvValueViaValue value) value,
   }) {
     return value(this);
   }
@@ -678,8 +678,8 @@ class _$_EnvValueValue implements _EnvValueValue {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_EnvValueVariable value)? veriable,
-    TResult? Function(_EnvValueValue value)? value,
+    TResult? Function(EnvValueViaName value)? env,
+    TResult? Function(EnvValueViaValue value)? value,
   }) {
     return value?.call(this);
   }
@@ -687,8 +687,8 @@ class _$_EnvValueValue implements _EnvValueValue {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EnvValueVariable value)? veriable,
-    TResult Function(_EnvValueValue value)? value,
+    TResult Function(EnvValueViaName value)? env,
+    TResult Function(EnvValueViaValue value)? value,
     required TResult orElse(),
   }) {
     if (value != null) {
@@ -699,17 +699,17 @@ class _$_EnvValueValue implements _EnvValueValue {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EnvValueValueToJson(
+    return _$$EnvValueViaValueToJson(
       this,
     );
   }
 }
 
-abstract class _EnvValueValue implements EnvValue {
-  const factory _EnvValueValue(final String value) = _$_EnvValueValue;
+abstract class EnvValueViaValue implements EnvValue {
+  const factory EnvValueViaValue(final String value) = _$EnvValueViaValue;
 
-  factory _EnvValueValue.fromJson(Map<String, dynamic> json) =
-      _$_EnvValueValue.fromJson;
+  factory EnvValueViaValue.fromJson(Map<String, dynamic> json) =
+      _$EnvValueViaValue.fromJson;
 
   String get value;
 }
