@@ -115,7 +115,7 @@ Map<String, dynamic> _$$_FieldToJson(_$_Field instance) => <String, dynamic>{
 const _$FieldKindEnumMap = {
   FieldKind.scalar: 'scalar',
   FieldKind.object: 'object',
-  FieldKind.enum$: r'enum$',
+  FieldKind.enum$: 'enum',
   FieldKind.unsupported: 'unsupported',
 };
 

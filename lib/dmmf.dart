@@ -86,7 +86,10 @@ class Field with _$Field {
 enum FieldKind {
   scalar,
   object,
+
+  @JsonValue('enum')
   enum$,
+
   unsupported,
 }
 
@@ -178,40 +181,25 @@ class ModelMapping with _$ModelMapping {
   const factory ModelMapping({
     required String model,
     String? plural,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? findUnique,
     @JsonKey(readValue: _modelMappingActionValueReader)
-        String? findUnique,
+    String? findUniqueOrThrow,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? findFirst,
     @JsonKey(readValue: _modelMappingActionValueReader)
-        String? findUniqueOrThrow,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? findFirst,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? findFirstOrThrow,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? findMany,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? create,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? createMany,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? update,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? updateMany,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? upsert,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? delete,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? deleteMany,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? aggregate,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? groupBy,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? count,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? findRaw,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-        String? aggregateRaw,
+    String? findFirstOrThrow,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? findMany,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? create,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? createMany,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? update,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? updateMany,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? upsert,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? delete,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? deleteMany,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? aggregate,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? groupBy,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? count,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? findRaw,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? aggregateRaw,
   }) = _ModelMapping;
 
   factory ModelMapping.fromJson(Map<String, dynamic> json) =>
