@@ -402,38 +402,37 @@ const _$FieldNamespaceEnumMap = {
   FieldNamespace.prisma: 'prisma',
 };
 
-_$_ArgTypeString _$$_ArgTypeStringFromJson(Map<String, dynamic> json) =>
-    _$_ArgTypeString(
+_$StringArgType _$$StringArgTypeFromJson(Map<String, dynamic> json) =>
+    _$StringArgType(
       json['value'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_ArgTypeStringToJson(_$_ArgTypeString instance) =>
+Map<String, dynamic> _$$StringArgTypeToJson(_$StringArgType instance) =>
     <String, dynamic>{
       'value': instance.value,
       'runtimeType': instance.$type,
     };
 
-_$_ArgTypeInputType _$$_ArgTypeInputTypeFromJson(Map<String, dynamic> json) =>
-    _$_ArgTypeInputType(
+_$ObjectArgType _$$ObjectArgTypeFromJson(Map<String, dynamic> json) =>
+    _$ObjectArgType(
       InputType.fromJson(json['value'] as Map<String, dynamic>),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_ArgTypeInputTypeToJson(_$_ArgTypeInputType instance) =>
+Map<String, dynamic> _$$ObjectArgTypeToJson(_$ObjectArgType instance) =>
     <String, dynamic>{
       'value': instance.value,
       'runtimeType': instance.$type,
     };
 
-_$_ArgTypeSchemaEnum _$$_ArgTypeSchemaEnumFromJson(Map<String, dynamic> json) =>
-    _$_ArgTypeSchemaEnum(
+_$EnumArgType _$$EnumArgTypeFromJson(Map<String, dynamic> json) =>
+    _$EnumArgType(
       SchemaEnum.fromJson(json['value'] as Map<String, dynamic>),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_ArgTypeSchemaEnumToJson(
-        _$_ArgTypeSchemaEnum instance) =>
+Map<String, dynamic> _$$EnumArgTypeToJson(_$EnumArgType instance) =>
     <String, dynamic>{
       'value': instance.value,
       'runtimeType': instance.$type,
@@ -530,43 +529,43 @@ Map<String, dynamic> _$$_OutputTypeRefToJson(_$_OutputTypeRef instance) =>
       'type': const _OutputTypeRefTypeConverter().toJson(instance.type),
     };
 
-_$_OutputTypeRefTypeString _$$_OutputTypeRefTypeStringFromJson(
+_$StringOutputTypeRefType _$$StringOutputTypeRefTypeFromJson(
         Map<String, dynamic> json) =>
-    _$_OutputTypeRefTypeString(
+    _$StringOutputTypeRefType(
       json['value'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_OutputTypeRefTypeStringToJson(
-        _$_OutputTypeRefTypeString instance) =>
+Map<String, dynamic> _$$StringOutputTypeRefTypeToJson(
+        _$StringOutputTypeRefType instance) =>
     <String, dynamic>{
       'value': instance.value,
       'runtimeType': instance.$type,
     };
 
-_$_OutputTypeRefTypeOutputType _$$_OutputTypeRefTypeOutputTypeFromJson(
+_$ObjectOutputTypeRefType _$$ObjectOutputTypeRefTypeFromJson(
         Map<String, dynamic> json) =>
-    _$_OutputTypeRefTypeOutputType(
+    _$ObjectOutputTypeRefType(
       OutputType.fromJson(json['value'] as Map<String, dynamic>),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_OutputTypeRefTypeOutputTypeToJson(
-        _$_OutputTypeRefTypeOutputType instance) =>
+Map<String, dynamic> _$$ObjectOutputTypeRefTypeToJson(
+        _$ObjectOutputTypeRefType instance) =>
     <String, dynamic>{
       'value': instance.value,
       'runtimeType': instance.$type,
     };
 
-_$_OutputTypeRefTypeSchemaEnum _$$_OutputTypeRefTypeSchemaEnumFromJson(
+_$EnumOutputTypeRefType _$$EnumOutputTypeRefTypeFromJson(
         Map<String, dynamic> json) =>
-    _$_OutputTypeRefTypeSchemaEnum(
+    _$EnumOutputTypeRefType(
       SchemaEnum.fromJson(json['value'] as Map<String, dynamic>),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$_OutputTypeRefTypeSchemaEnumToJson(
-        _$_OutputTypeRefTypeSchemaEnum instance) =>
+Map<String, dynamic> _$$EnumOutputTypeRefTypeToJson(
+        _$EnumOutputTypeRefType instance) =>
     <String, dynamic>{
       'value': instance.value,
       'runtimeType': instance.$type,

@@ -1652,11 +1652,11 @@ abstract class _SchemaArgInputType implements SchemaArgInputType {
 ArgType _$ArgTypeFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
     case 'string':
-      return _ArgTypeString.fromJson(json);
-    case 'input':
-      return _ArgTypeInputType.fromJson(json);
+      return StringArgType.fromJson(json);
+    case 'object':
+      return ObjectArgType.fromJson(json);
     case 'enum_':
-      return _ArgTypeSchemaEnum.fromJson(json);
+      return EnumArgType.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'ArgType',
@@ -1670,44 +1670,44 @@ mixin _$ArgType {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) string,
-    required TResult Function(InputType value) input,
+    required TResult Function(InputType value) object,
     required TResult Function(SchemaEnum value) enum_,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? string,
-    TResult? Function(InputType value)? input,
+    TResult? Function(InputType value)? object,
     TResult? Function(SchemaEnum value)? enum_,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? string,
-    TResult Function(InputType value)? input,
+    TResult Function(InputType value)? object,
     TResult Function(SchemaEnum value)? enum_,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ArgTypeString value) string,
-    required TResult Function(_ArgTypeInputType value) input,
-    required TResult Function(_ArgTypeSchemaEnum value) enum_,
+    required TResult Function(StringArgType value) string,
+    required TResult Function(ObjectArgType value) object,
+    required TResult Function(EnumArgType value) enum_,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ArgTypeString value)? string,
-    TResult? Function(_ArgTypeInputType value)? input,
-    TResult? Function(_ArgTypeSchemaEnum value)? enum_,
+    TResult? Function(StringArgType value)? string,
+    TResult? Function(ObjectArgType value)? object,
+    TResult? Function(EnumArgType value)? enum_,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ArgTypeString value)? string,
-    TResult Function(_ArgTypeInputType value)? input,
-    TResult Function(_ArgTypeSchemaEnum value)? enum_,
+    TResult Function(StringArgType value)? string,
+    TResult Function(ObjectArgType value)? object,
+    TResult Function(EnumArgType value)? enum_,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1716,12 +1716,12 @@ mixin _$ArgType {
 
 /// @nodoc
 @JsonSerializable()
-class _$_ArgTypeString implements _ArgTypeString {
-  const _$_ArgTypeString(this.value, {final String? $type})
+class _$StringArgType implements StringArgType {
+  const _$StringArgType(this.value, {final String? $type})
       : $type = $type ?? 'string';
 
-  factory _$_ArgTypeString.fromJson(Map<String, dynamic> json) =>
-      _$$_ArgTypeStringFromJson(json);
+  factory _$StringArgType.fromJson(Map<String, dynamic> json) =>
+      _$$StringArgTypeFromJson(json);
 
   @override
   final String value;
@@ -1738,7 +1738,7 @@ class _$_ArgTypeString implements _ArgTypeString {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) string,
-    required TResult Function(InputType value) input,
+    required TResult Function(InputType value) object,
     required TResult Function(SchemaEnum value) enum_,
   }) {
     return string(value);
@@ -1748,7 +1748,7 @@ class _$_ArgTypeString implements _ArgTypeString {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? string,
-    TResult? Function(InputType value)? input,
+    TResult? Function(InputType value)? object,
     TResult? Function(SchemaEnum value)? enum_,
   }) {
     return string?.call(value);
@@ -1758,7 +1758,7 @@ class _$_ArgTypeString implements _ArgTypeString {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? string,
-    TResult Function(InputType value)? input,
+    TResult Function(InputType value)? object,
     TResult Function(SchemaEnum value)? enum_,
     required TResult orElse(),
   }) {
@@ -1771,9 +1771,9 @@ class _$_ArgTypeString implements _ArgTypeString {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ArgTypeString value) string,
-    required TResult Function(_ArgTypeInputType value) input,
-    required TResult Function(_ArgTypeSchemaEnum value) enum_,
+    required TResult Function(StringArgType value) string,
+    required TResult Function(ObjectArgType value) object,
+    required TResult Function(EnumArgType value) enum_,
   }) {
     return string(this);
   }
@@ -1781,9 +1781,9 @@ class _$_ArgTypeString implements _ArgTypeString {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ArgTypeString value)? string,
-    TResult? Function(_ArgTypeInputType value)? input,
-    TResult? Function(_ArgTypeSchemaEnum value)? enum_,
+    TResult? Function(StringArgType value)? string,
+    TResult? Function(ObjectArgType value)? object,
+    TResult? Function(EnumArgType value)? enum_,
   }) {
     return string?.call(this);
   }
@@ -1791,9 +1791,9 @@ class _$_ArgTypeString implements _ArgTypeString {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ArgTypeString value)? string,
-    TResult Function(_ArgTypeInputType value)? input,
-    TResult Function(_ArgTypeSchemaEnum value)? enum_,
+    TResult Function(StringArgType value)? string,
+    TResult Function(ObjectArgType value)? object,
+    TResult Function(EnumArgType value)? enum_,
     required TResult orElse(),
   }) {
     if (string != null) {
@@ -1804,17 +1804,17 @@ class _$_ArgTypeString implements _ArgTypeString {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ArgTypeStringToJson(
+    return _$$StringArgTypeToJson(
       this,
     );
   }
 }
 
-abstract class _ArgTypeString implements ArgType {
-  const factory _ArgTypeString(final String value) = _$_ArgTypeString;
+abstract class StringArgType implements ArgType {
+  const factory StringArgType(final String value) = _$StringArgType;
 
-  factory _ArgTypeString.fromJson(Map<String, dynamic> json) =
-      _$_ArgTypeString.fromJson;
+  factory StringArgType.fromJson(Map<String, dynamic> json) =
+      _$StringArgType.fromJson;
 
   @override
   String get value;
@@ -1822,12 +1822,12 @@ abstract class _ArgTypeString implements ArgType {
 
 /// @nodoc
 @JsonSerializable()
-class _$_ArgTypeInputType implements _ArgTypeInputType {
-  const _$_ArgTypeInputType(this.value, {final String? $type})
-      : $type = $type ?? 'input';
+class _$ObjectArgType implements ObjectArgType {
+  const _$ObjectArgType(this.value, {final String? $type})
+      : $type = $type ?? 'object';
 
-  factory _$_ArgTypeInputType.fromJson(Map<String, dynamic> json) =>
-      _$$_ArgTypeInputTypeFromJson(json);
+  factory _$ObjectArgType.fromJson(Map<String, dynamic> json) =>
+      _$$ObjectArgTypeFromJson(json);
 
   @override
   final InputType value;
@@ -1837,39 +1837,39 @@ class _$_ArgTypeInputType implements _ArgTypeInputType {
 
   @override
   String toString() {
-    return 'ArgType.input(value: $value)';
+    return 'ArgType.object(value: $value)';
   }
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) string,
-    required TResult Function(InputType value) input,
+    required TResult Function(InputType value) object,
     required TResult Function(SchemaEnum value) enum_,
   }) {
-    return input(value);
+    return object(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? string,
-    TResult? Function(InputType value)? input,
+    TResult? Function(InputType value)? object,
     TResult? Function(SchemaEnum value)? enum_,
   }) {
-    return input?.call(value);
+    return object?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? string,
-    TResult Function(InputType value)? input,
+    TResult Function(InputType value)? object,
     TResult Function(SchemaEnum value)? enum_,
     required TResult orElse(),
   }) {
-    if (input != null) {
-      return input(value);
+    if (object != null) {
+      return object(value);
     }
     return orElse();
   }
@@ -1877,50 +1877,50 @@ class _$_ArgTypeInputType implements _ArgTypeInputType {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ArgTypeString value) string,
-    required TResult Function(_ArgTypeInputType value) input,
-    required TResult Function(_ArgTypeSchemaEnum value) enum_,
+    required TResult Function(StringArgType value) string,
+    required TResult Function(ObjectArgType value) object,
+    required TResult Function(EnumArgType value) enum_,
   }) {
-    return input(this);
+    return object(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ArgTypeString value)? string,
-    TResult? Function(_ArgTypeInputType value)? input,
-    TResult? Function(_ArgTypeSchemaEnum value)? enum_,
+    TResult? Function(StringArgType value)? string,
+    TResult? Function(ObjectArgType value)? object,
+    TResult? Function(EnumArgType value)? enum_,
   }) {
-    return input?.call(this);
+    return object?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ArgTypeString value)? string,
-    TResult Function(_ArgTypeInputType value)? input,
-    TResult Function(_ArgTypeSchemaEnum value)? enum_,
+    TResult Function(StringArgType value)? string,
+    TResult Function(ObjectArgType value)? object,
+    TResult Function(EnumArgType value)? enum_,
     required TResult orElse(),
   }) {
-    if (input != null) {
-      return input(this);
+    if (object != null) {
+      return object(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ArgTypeInputTypeToJson(
+    return _$$ObjectArgTypeToJson(
       this,
     );
   }
 }
 
-abstract class _ArgTypeInputType implements ArgType {
-  const factory _ArgTypeInputType(final InputType value) = _$_ArgTypeInputType;
+abstract class ObjectArgType implements ArgType {
+  const factory ObjectArgType(final InputType value) = _$ObjectArgType;
 
-  factory _ArgTypeInputType.fromJson(Map<String, dynamic> json) =
-      _$_ArgTypeInputType.fromJson;
+  factory ObjectArgType.fromJson(Map<String, dynamic> json) =
+      _$ObjectArgType.fromJson;
 
   @override
   InputType get value;
@@ -1928,12 +1928,12 @@ abstract class _ArgTypeInputType implements ArgType {
 
 /// @nodoc
 @JsonSerializable()
-class _$_ArgTypeSchemaEnum implements _ArgTypeSchemaEnum {
-  const _$_ArgTypeSchemaEnum(this.value, {final String? $type})
+class _$EnumArgType implements EnumArgType {
+  const _$EnumArgType(this.value, {final String? $type})
       : $type = $type ?? 'enum_';
 
-  factory _$_ArgTypeSchemaEnum.fromJson(Map<String, dynamic> json) =>
-      _$$_ArgTypeSchemaEnumFromJson(json);
+  factory _$EnumArgType.fromJson(Map<String, dynamic> json) =>
+      _$$EnumArgTypeFromJson(json);
 
   @override
   final SchemaEnum value;
@@ -1950,7 +1950,7 @@ class _$_ArgTypeSchemaEnum implements _ArgTypeSchemaEnum {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) string,
-    required TResult Function(InputType value) input,
+    required TResult Function(InputType value) object,
     required TResult Function(SchemaEnum value) enum_,
   }) {
     return enum_(value);
@@ -1960,7 +1960,7 @@ class _$_ArgTypeSchemaEnum implements _ArgTypeSchemaEnum {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? string,
-    TResult? Function(InputType value)? input,
+    TResult? Function(InputType value)? object,
     TResult? Function(SchemaEnum value)? enum_,
   }) {
     return enum_?.call(value);
@@ -1970,7 +1970,7 @@ class _$_ArgTypeSchemaEnum implements _ArgTypeSchemaEnum {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? string,
-    TResult Function(InputType value)? input,
+    TResult Function(InputType value)? object,
     TResult Function(SchemaEnum value)? enum_,
     required TResult orElse(),
   }) {
@@ -1983,9 +1983,9 @@ class _$_ArgTypeSchemaEnum implements _ArgTypeSchemaEnum {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ArgTypeString value) string,
-    required TResult Function(_ArgTypeInputType value) input,
-    required TResult Function(_ArgTypeSchemaEnum value) enum_,
+    required TResult Function(StringArgType value) string,
+    required TResult Function(ObjectArgType value) object,
+    required TResult Function(EnumArgType value) enum_,
   }) {
     return enum_(this);
   }
@@ -1993,9 +1993,9 @@ class _$_ArgTypeSchemaEnum implements _ArgTypeSchemaEnum {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ArgTypeString value)? string,
-    TResult? Function(_ArgTypeInputType value)? input,
-    TResult? Function(_ArgTypeSchemaEnum value)? enum_,
+    TResult? Function(StringArgType value)? string,
+    TResult? Function(ObjectArgType value)? object,
+    TResult? Function(EnumArgType value)? enum_,
   }) {
     return enum_?.call(this);
   }
@@ -2003,9 +2003,9 @@ class _$_ArgTypeSchemaEnum implements _ArgTypeSchemaEnum {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ArgTypeString value)? string,
-    TResult Function(_ArgTypeInputType value)? input,
-    TResult Function(_ArgTypeSchemaEnum value)? enum_,
+    TResult Function(StringArgType value)? string,
+    TResult Function(ObjectArgType value)? object,
+    TResult Function(EnumArgType value)? enum_,
     required TResult orElse(),
   }) {
     if (enum_ != null) {
@@ -2016,18 +2016,17 @@ class _$_ArgTypeSchemaEnum implements _ArgTypeSchemaEnum {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ArgTypeSchemaEnumToJson(
+    return _$$EnumArgTypeToJson(
       this,
     );
   }
 }
 
-abstract class _ArgTypeSchemaEnum implements ArgType {
-  const factory _ArgTypeSchemaEnum(final SchemaEnum value) =
-      _$_ArgTypeSchemaEnum;
+abstract class EnumArgType implements ArgType {
+  const factory EnumArgType(final SchemaEnum value) = _$EnumArgType;
 
-  factory _ArgTypeSchemaEnum.fromJson(Map<String, dynamic> json) =
-      _$_ArgTypeSchemaEnum.fromJson;
+  factory EnumArgType.fromJson(Map<String, dynamic> json) =
+      _$EnumArgType.fromJson;
 
   @override
   SchemaEnum get value;
@@ -2398,11 +2397,11 @@ abstract class _OutputTypeRef implements OutputTypeRef {
 OutputTypeRefType _$OutputTypeRefTypeFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
     case 'string':
-      return _OutputTypeRefTypeString.fromJson(json);
-    case 'output':
-      return _OutputTypeRefTypeOutputType.fromJson(json);
+      return StringOutputTypeRefType.fromJson(json);
+    case 'object':
+      return ObjectOutputTypeRefType.fromJson(json);
     case 'enum_':
-      return _OutputTypeRefTypeSchemaEnum.fromJson(json);
+      return EnumOutputTypeRefType.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'OutputTypeRefType',
@@ -2416,44 +2415,44 @@ mixin _$OutputTypeRefType {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) string,
-    required TResult Function(OutputType value) output,
+    required TResult Function(OutputType value) object,
     required TResult Function(SchemaEnum value) enum_,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? string,
-    TResult? Function(OutputType value)? output,
+    TResult? Function(OutputType value)? object,
     TResult? Function(SchemaEnum value)? enum_,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? string,
-    TResult Function(OutputType value)? output,
+    TResult Function(OutputType value)? object,
     TResult Function(SchemaEnum value)? enum_,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OutputTypeRefTypeString value) string,
-    required TResult Function(_OutputTypeRefTypeOutputType value) output,
-    required TResult Function(_OutputTypeRefTypeSchemaEnum value) enum_,
+    required TResult Function(StringOutputTypeRefType value) string,
+    required TResult Function(ObjectOutputTypeRefType value) object,
+    required TResult Function(EnumOutputTypeRefType value) enum_,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OutputTypeRefTypeString value)? string,
-    TResult? Function(_OutputTypeRefTypeOutputType value)? output,
-    TResult? Function(_OutputTypeRefTypeSchemaEnum value)? enum_,
+    TResult? Function(StringOutputTypeRefType value)? string,
+    TResult? Function(ObjectOutputTypeRefType value)? object,
+    TResult? Function(EnumOutputTypeRefType value)? enum_,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OutputTypeRefTypeString value)? string,
-    TResult Function(_OutputTypeRefTypeOutputType value)? output,
-    TResult Function(_OutputTypeRefTypeSchemaEnum value)? enum_,
+    TResult Function(StringOutputTypeRefType value)? string,
+    TResult Function(ObjectOutputTypeRefType value)? object,
+    TResult Function(EnumOutputTypeRefType value)? enum_,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2462,12 +2461,12 @@ mixin _$OutputTypeRefType {
 
 /// @nodoc
 @JsonSerializable()
-class _$_OutputTypeRefTypeString implements _OutputTypeRefTypeString {
-  const _$_OutputTypeRefTypeString(this.value, {final String? $type})
+class _$StringOutputTypeRefType implements StringOutputTypeRefType {
+  const _$StringOutputTypeRefType(this.value, {final String? $type})
       : $type = $type ?? 'string';
 
-  factory _$_OutputTypeRefTypeString.fromJson(Map<String, dynamic> json) =>
-      _$$_OutputTypeRefTypeStringFromJson(json);
+  factory _$StringOutputTypeRefType.fromJson(Map<String, dynamic> json) =>
+      _$$StringOutputTypeRefTypeFromJson(json);
 
   @override
   final String value;
@@ -2484,7 +2483,7 @@ class _$_OutputTypeRefTypeString implements _OutputTypeRefTypeString {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) string,
-    required TResult Function(OutputType value) output,
+    required TResult Function(OutputType value) object,
     required TResult Function(SchemaEnum value) enum_,
   }) {
     return string(value);
@@ -2494,7 +2493,7 @@ class _$_OutputTypeRefTypeString implements _OutputTypeRefTypeString {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? string,
-    TResult? Function(OutputType value)? output,
+    TResult? Function(OutputType value)? object,
     TResult? Function(SchemaEnum value)? enum_,
   }) {
     return string?.call(value);
@@ -2504,7 +2503,7 @@ class _$_OutputTypeRefTypeString implements _OutputTypeRefTypeString {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? string,
-    TResult Function(OutputType value)? output,
+    TResult Function(OutputType value)? object,
     TResult Function(SchemaEnum value)? enum_,
     required TResult orElse(),
   }) {
@@ -2517,9 +2516,9 @@ class _$_OutputTypeRefTypeString implements _OutputTypeRefTypeString {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OutputTypeRefTypeString value) string,
-    required TResult Function(_OutputTypeRefTypeOutputType value) output,
-    required TResult Function(_OutputTypeRefTypeSchemaEnum value) enum_,
+    required TResult Function(StringOutputTypeRefType value) string,
+    required TResult Function(ObjectOutputTypeRefType value) object,
+    required TResult Function(EnumOutputTypeRefType value) enum_,
   }) {
     return string(this);
   }
@@ -2527,9 +2526,9 @@ class _$_OutputTypeRefTypeString implements _OutputTypeRefTypeString {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OutputTypeRefTypeString value)? string,
-    TResult? Function(_OutputTypeRefTypeOutputType value)? output,
-    TResult? Function(_OutputTypeRefTypeSchemaEnum value)? enum_,
+    TResult? Function(StringOutputTypeRefType value)? string,
+    TResult? Function(ObjectOutputTypeRefType value)? object,
+    TResult? Function(EnumOutputTypeRefType value)? enum_,
   }) {
     return string?.call(this);
   }
@@ -2537,9 +2536,9 @@ class _$_OutputTypeRefTypeString implements _OutputTypeRefTypeString {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OutputTypeRefTypeString value)? string,
-    TResult Function(_OutputTypeRefTypeOutputType value)? output,
-    TResult Function(_OutputTypeRefTypeSchemaEnum value)? enum_,
+    TResult Function(StringOutputTypeRefType value)? string,
+    TResult Function(ObjectOutputTypeRefType value)? object,
+    TResult Function(EnumOutputTypeRefType value)? enum_,
     required TResult orElse(),
   }) {
     if (string != null) {
@@ -2550,18 +2549,18 @@ class _$_OutputTypeRefTypeString implements _OutputTypeRefTypeString {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OutputTypeRefTypeStringToJson(
+    return _$$StringOutputTypeRefTypeToJson(
       this,
     );
   }
 }
 
-abstract class _OutputTypeRefTypeString implements OutputTypeRefType {
-  const factory _OutputTypeRefTypeString(final String value) =
-      _$_OutputTypeRefTypeString;
+abstract class StringOutputTypeRefType implements OutputTypeRefType {
+  const factory StringOutputTypeRefType(final String value) =
+      _$StringOutputTypeRefType;
 
-  factory _OutputTypeRefTypeString.fromJson(Map<String, dynamic> json) =
-      _$_OutputTypeRefTypeString.fromJson;
+  factory StringOutputTypeRefType.fromJson(Map<String, dynamic> json) =
+      _$StringOutputTypeRefType.fromJson;
 
   @override
   String get value;
@@ -2569,12 +2568,12 @@ abstract class _OutputTypeRefTypeString implements OutputTypeRefType {
 
 /// @nodoc
 @JsonSerializable()
-class _$_OutputTypeRefTypeOutputType implements _OutputTypeRefTypeOutputType {
-  const _$_OutputTypeRefTypeOutputType(this.value, {final String? $type})
-      : $type = $type ?? 'output';
+class _$ObjectOutputTypeRefType implements ObjectOutputTypeRefType {
+  const _$ObjectOutputTypeRefType(this.value, {final String? $type})
+      : $type = $type ?? 'object';
 
-  factory _$_OutputTypeRefTypeOutputType.fromJson(Map<String, dynamic> json) =>
-      _$$_OutputTypeRefTypeOutputTypeFromJson(json);
+  factory _$ObjectOutputTypeRefType.fromJson(Map<String, dynamic> json) =>
+      _$$ObjectOutputTypeRefTypeFromJson(json);
 
   @override
   final OutputType value;
@@ -2584,39 +2583,39 @@ class _$_OutputTypeRefTypeOutputType implements _OutputTypeRefTypeOutputType {
 
   @override
   String toString() {
-    return 'OutputTypeRefType.output(value: $value)';
+    return 'OutputTypeRefType.object(value: $value)';
   }
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) string,
-    required TResult Function(OutputType value) output,
+    required TResult Function(OutputType value) object,
     required TResult Function(SchemaEnum value) enum_,
   }) {
-    return output(value);
+    return object(value);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? string,
-    TResult? Function(OutputType value)? output,
+    TResult? Function(OutputType value)? object,
     TResult? Function(SchemaEnum value)? enum_,
   }) {
-    return output?.call(value);
+    return object?.call(value);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? string,
-    TResult Function(OutputType value)? output,
+    TResult Function(OutputType value)? object,
     TResult Function(SchemaEnum value)? enum_,
     required TResult orElse(),
   }) {
-    if (output != null) {
-      return output(value);
+    if (object != null) {
+      return object(value);
     }
     return orElse();
   }
@@ -2624,51 +2623,51 @@ class _$_OutputTypeRefTypeOutputType implements _OutputTypeRefTypeOutputType {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OutputTypeRefTypeString value) string,
-    required TResult Function(_OutputTypeRefTypeOutputType value) output,
-    required TResult Function(_OutputTypeRefTypeSchemaEnum value) enum_,
+    required TResult Function(StringOutputTypeRefType value) string,
+    required TResult Function(ObjectOutputTypeRefType value) object,
+    required TResult Function(EnumOutputTypeRefType value) enum_,
   }) {
-    return output(this);
+    return object(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OutputTypeRefTypeString value)? string,
-    TResult? Function(_OutputTypeRefTypeOutputType value)? output,
-    TResult? Function(_OutputTypeRefTypeSchemaEnum value)? enum_,
+    TResult? Function(StringOutputTypeRefType value)? string,
+    TResult? Function(ObjectOutputTypeRefType value)? object,
+    TResult? Function(EnumOutputTypeRefType value)? enum_,
   }) {
-    return output?.call(this);
+    return object?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OutputTypeRefTypeString value)? string,
-    TResult Function(_OutputTypeRefTypeOutputType value)? output,
-    TResult Function(_OutputTypeRefTypeSchemaEnum value)? enum_,
+    TResult Function(StringOutputTypeRefType value)? string,
+    TResult Function(ObjectOutputTypeRefType value)? object,
+    TResult Function(EnumOutputTypeRefType value)? enum_,
     required TResult orElse(),
   }) {
-    if (output != null) {
-      return output(this);
+    if (object != null) {
+      return object(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OutputTypeRefTypeOutputTypeToJson(
+    return _$$ObjectOutputTypeRefTypeToJson(
       this,
     );
   }
 }
 
-abstract class _OutputTypeRefTypeOutputType implements OutputTypeRefType {
-  const factory _OutputTypeRefTypeOutputType(final OutputType value) =
-      _$_OutputTypeRefTypeOutputType;
+abstract class ObjectOutputTypeRefType implements OutputTypeRefType {
+  const factory ObjectOutputTypeRefType(final OutputType value) =
+      _$ObjectOutputTypeRefType;
 
-  factory _OutputTypeRefTypeOutputType.fromJson(Map<String, dynamic> json) =
-      _$_OutputTypeRefTypeOutputType.fromJson;
+  factory ObjectOutputTypeRefType.fromJson(Map<String, dynamic> json) =
+      _$ObjectOutputTypeRefType.fromJson;
 
   @override
   OutputType get value;
@@ -2676,12 +2675,12 @@ abstract class _OutputTypeRefTypeOutputType implements OutputTypeRefType {
 
 /// @nodoc
 @JsonSerializable()
-class _$_OutputTypeRefTypeSchemaEnum implements _OutputTypeRefTypeSchemaEnum {
-  const _$_OutputTypeRefTypeSchemaEnum(this.value, {final String? $type})
+class _$EnumOutputTypeRefType implements EnumOutputTypeRefType {
+  const _$EnumOutputTypeRefType(this.value, {final String? $type})
       : $type = $type ?? 'enum_';
 
-  factory _$_OutputTypeRefTypeSchemaEnum.fromJson(Map<String, dynamic> json) =>
-      _$$_OutputTypeRefTypeSchemaEnumFromJson(json);
+  factory _$EnumOutputTypeRefType.fromJson(Map<String, dynamic> json) =>
+      _$$EnumOutputTypeRefTypeFromJson(json);
 
   @override
   final SchemaEnum value;
@@ -2698,7 +2697,7 @@ class _$_OutputTypeRefTypeSchemaEnum implements _OutputTypeRefTypeSchemaEnum {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String value) string,
-    required TResult Function(OutputType value) output,
+    required TResult Function(OutputType value) object,
     required TResult Function(SchemaEnum value) enum_,
   }) {
     return enum_(value);
@@ -2708,7 +2707,7 @@ class _$_OutputTypeRefTypeSchemaEnum implements _OutputTypeRefTypeSchemaEnum {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String value)? string,
-    TResult? Function(OutputType value)? output,
+    TResult? Function(OutputType value)? object,
     TResult? Function(SchemaEnum value)? enum_,
   }) {
     return enum_?.call(value);
@@ -2718,7 +2717,7 @@ class _$_OutputTypeRefTypeSchemaEnum implements _OutputTypeRefTypeSchemaEnum {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String value)? string,
-    TResult Function(OutputType value)? output,
+    TResult Function(OutputType value)? object,
     TResult Function(SchemaEnum value)? enum_,
     required TResult orElse(),
   }) {
@@ -2731,9 +2730,9 @@ class _$_OutputTypeRefTypeSchemaEnum implements _OutputTypeRefTypeSchemaEnum {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_OutputTypeRefTypeString value) string,
-    required TResult Function(_OutputTypeRefTypeOutputType value) output,
-    required TResult Function(_OutputTypeRefTypeSchemaEnum value) enum_,
+    required TResult Function(StringOutputTypeRefType value) string,
+    required TResult Function(ObjectOutputTypeRefType value) object,
+    required TResult Function(EnumOutputTypeRefType value) enum_,
   }) {
     return enum_(this);
   }
@@ -2741,9 +2740,9 @@ class _$_OutputTypeRefTypeSchemaEnum implements _OutputTypeRefTypeSchemaEnum {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OutputTypeRefTypeString value)? string,
-    TResult? Function(_OutputTypeRefTypeOutputType value)? output,
-    TResult? Function(_OutputTypeRefTypeSchemaEnum value)? enum_,
+    TResult? Function(StringOutputTypeRefType value)? string,
+    TResult? Function(ObjectOutputTypeRefType value)? object,
+    TResult? Function(EnumOutputTypeRefType value)? enum_,
   }) {
     return enum_?.call(this);
   }
@@ -2751,9 +2750,9 @@ class _$_OutputTypeRefTypeSchemaEnum implements _OutputTypeRefTypeSchemaEnum {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OutputTypeRefTypeString value)? string,
-    TResult Function(_OutputTypeRefTypeOutputType value)? output,
-    TResult Function(_OutputTypeRefTypeSchemaEnum value)? enum_,
+    TResult Function(StringOutputTypeRefType value)? string,
+    TResult Function(ObjectOutputTypeRefType value)? object,
+    TResult Function(EnumOutputTypeRefType value)? enum_,
     required TResult orElse(),
   }) {
     if (enum_ != null) {
@@ -2764,18 +2763,18 @@ class _$_OutputTypeRefTypeSchemaEnum implements _OutputTypeRefTypeSchemaEnum {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_OutputTypeRefTypeSchemaEnumToJson(
+    return _$$EnumOutputTypeRefTypeToJson(
       this,
     );
   }
 }
 
-abstract class _OutputTypeRefTypeSchemaEnum implements OutputTypeRefType {
-  const factory _OutputTypeRefTypeSchemaEnum(final SchemaEnum value) =
-      _$_OutputTypeRefTypeSchemaEnum;
+abstract class EnumOutputTypeRefType implements OutputTypeRefType {
+  const factory EnumOutputTypeRefType(final SchemaEnum value) =
+      _$EnumOutputTypeRefType;
 
-  factory _OutputTypeRefTypeSchemaEnum.fromJson(Map<String, dynamic> json) =
-      _$_OutputTypeRefTypeSchemaEnum.fromJson;
+  factory EnumOutputTypeRefType.fromJson(Map<String, dynamic> json) =
+      _$EnumOutputTypeRefType.fromJson;
 
   @override
   SchemaEnum get value;

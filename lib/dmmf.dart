@@ -342,9 +342,9 @@ class SchemaArgInputType with _$SchemaArgInputType {
 /// @see https://github.com/prisma/prisma/blob/main/packages/generator-helper/src/dmmf.ts#L136
 @freezed
 sealed class ArgType with _$ArgType {
-  const factory ArgType.string(String value) = _ArgTypeString;
-  const factory ArgType.input(InputType value) = _ArgTypeInputType;
-  const factory ArgType.enum_(SchemaEnum value) = _ArgTypeSchemaEnum;
+  const factory ArgType.string(String value) = StringArgType;
+  const factory ArgType.object(InputType value) = ObjectArgType;
+  const factory ArgType.enum_(SchemaEnum value) = EnumArgType;
 
   factory ArgType.fromJson(Map<String, dynamic> json) =>
       _$ArgTypeFromJson(json);
@@ -381,11 +381,11 @@ class _ArgTypeConverter implements JsonConverter<ArgType, Object> {
 
   @override
   Object toJson(ArgType object) {
-    return object.when(
-      string: (value) => value,
-      input: (value) => value.toJson(),
-      enum_: (value) => value.toJson(),
-    );
+    return switch (object) {
+      StringArgType object => object.value,
+      ObjectArgType object => object.value.toJson(),
+      EnumArgType object => object.value.toJson(),
+    };
   }
 }
 
@@ -462,11 +462,11 @@ class OutputTypeRef with _$OutputTypeRef {
 @freezed
 sealed class OutputTypeRefType with _$OutputTypeRefType {
   const factory OutputTypeRefType.string(String value) =
-      _OutputTypeRefTypeString;
-  const factory OutputTypeRefType.output(OutputType value) =
-      _OutputTypeRefTypeOutputType;
+      StringOutputTypeRefType;
+  const factory OutputTypeRefType.object(OutputType value) =
+      ObjectOutputTypeRefType;
   const factory OutputTypeRefType.enum_(SchemaEnum value) =
-      _OutputTypeRefTypeSchemaEnum;
+      EnumOutputTypeRefType;
 
   factory OutputTypeRefType.fromJson(Map<String, dynamic> json) =>
       _$OutputTypeRefTypeFromJson(json);
@@ -504,11 +504,11 @@ class _OutputTypeRefTypeConverter
 
   @override
   Object toJson(OutputTypeRefType object) {
-    return object.when(
-      string: (value) => value,
-      output: (value) => value.toJson(),
-      enum_: (value) => value.toJson(),
-    );
+    return switch (object) {
+      StringOutputTypeRefType object => object.value,
+      ObjectOutputTypeRefType object => object.value.toJson(),
+      EnumOutputTypeRefType object => object.value.toJson(),
+    };
   }
 }
 
