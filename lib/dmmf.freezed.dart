@@ -460,7 +460,7 @@ UniqueIndex _$UniqueIndexFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UniqueIndex {
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   List<String> get fields => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -469,14 +469,14 @@ mixin _$UniqueIndex {
 /// @nodoc
 @JsonSerializable()
 class _$_UniqueIndex implements _UniqueIndex {
-  const _$_UniqueIndex({required this.name, required final List<String> fields})
+  const _$_UniqueIndex({this.name, required final List<String> fields})
       : _fields = fields;
 
   factory _$_UniqueIndex.fromJson(Map<String, dynamic> json) =>
       _$$_UniqueIndexFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   final List<String> _fields;
   @override
   List<String> get fields {
@@ -500,14 +500,14 @@ class _$_UniqueIndex implements _UniqueIndex {
 
 abstract class _UniqueIndex implements UniqueIndex {
   const factory _UniqueIndex(
-      {required final String name,
+      {final String? name,
       required final List<String> fields}) = _$_UniqueIndex;
 
   factory _UniqueIndex.fromJson(Map<String, dynamic> json) =
       _$_UniqueIndex.fromJson;
 
   @override
-  String get name;
+  String? get name;
   @override
   List<String> get fields;
 }

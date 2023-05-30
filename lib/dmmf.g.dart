@@ -121,7 +121,7 @@ const _$FieldKindEnumMap = {
 
 _$_UniqueIndex _$$_UniqueIndexFromJson(Map<String, dynamic> json) =>
     _$_UniqueIndex(
-      name: json['name'] as String,
+      name: json['name'] as String?,
       fields:
           (json['fields'] as List<dynamic>).map((e) => e as String).toList(),
     );

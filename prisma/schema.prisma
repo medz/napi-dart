@@ -31,3 +31,16 @@ enum Role {
   USER
   ADMIN
 }
+
+// issue: https://github.com/odroe/prisma-dart/issues/227
+model AccountConnection {
+  id         String  @id @db.Uuid
+  user_id    String  @db.Uuid
+  account_id String
+  provider   String
+  data       Json
+  email      String?
+
+  @@unique([account_id, user_id, provider], map: "account_connections_unique_constraint")
+  @@map("account_connections")
+}

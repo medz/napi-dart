@@ -111,7 +111,7 @@ enum FieldLocation {
 @freezed
 class UniqueIndex with _$UniqueIndex {
   const factory UniqueIndex({
-    required String name,
+    String? name,
     required List<String> fields,
   }) = _UniqueIndex;
 
@@ -344,12 +344,10 @@ class _ArgTypeConverter implements JsonConverter<ArgType, Object> {
   String resolveRuntimeType(Object json) {
     if (json is String) {
       return 'string';
-    } else if (json is Map) {
-      if (json.containsKey('constraints')) {
-        return 'input';
-      } else if (json.containsKey('values')) {
-        return 'enum_';
-      }
+    } else if (json case {'constraints': Map}) {
+      return 'input';
+    } else if (json case {'values': List}) {
+      return 'enum_';
     }
 
     throw Exception('Could not resolve runtime type for $json');
@@ -357,7 +355,7 @@ class _ArgTypeConverter implements JsonConverter<ArgType, Object> {
 
   @override
   ArgType fromJson(Object json) {
-    if (json is Map && json.containsKey('runtimeType')) {
+    if (json case {'runtimeType': String, 'value': Object?}) {
       return ArgType.fromJson(json.cast());
     }
 
