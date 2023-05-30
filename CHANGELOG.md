@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/odroe/prisma-generator-helper/compare/prisma_generator_helper-v1.2.1...prisma_generator_helper-v1.2.2) (2023-05-30)
+
+
+### Bug Fixes
+
+* **dmmf:** Fixed unique index name is nullable ([35d9938](https://github.com/odroe/prisma-generator-helper/commit/35d99386bcc0db6b91d2f0410af056009f608db1))
+
 ## [1.2.1](https://github.com/odroe/prisma-generator-helper/compare/prisma_generator_helper-v1.2.0...prisma_generator_helper-v1.2.1) (2023-05-30)
 
 
