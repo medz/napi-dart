@@ -165,8 +165,8 @@ class _EnvValueConverter implements JsonConverter<EnvValue, Map> {
   @override
   Map toJson(EnvValue object) {
     return switch (object) {
-      EnvValueViaName env => {'fromEnvVar': env.name},
-      EnvValueViaValue env => {'value': env.value},
+      EnvValueViaName(name: final name) => {'fromEnvVar': name},
+      EnvValueViaValue(value: final value) => {'value': value},
     };
   }
 }

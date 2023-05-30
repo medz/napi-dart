@@ -382,9 +382,9 @@ class _ArgTypeConverter implements JsonConverter<ArgType, Object> {
   @override
   Object toJson(ArgType object) {
     return switch (object) {
-      StringArgType object => object.value,
-      ObjectArgType object => object.value.toJson(),
-      EnumArgType object => object.value.toJson(),
+      StringArgType(value: final value) => value,
+      ObjectArgType(value: final input) => input.toJson(),
+      EnumArgType(value: final enum_) => enum_.toJson(),
     };
   }
 }
@@ -492,8 +492,11 @@ class _OutputTypeRefTypeConverter
 
   @override
   OutputTypeRefType fromJson(Object json) {
-    if (json is Map && json.containsKey('runtimeType')) {
-      return OutputTypeRefType.fromJson(json.cast());
+    if (json case {'runtimeType': String runtimeType, 'value': Object value}) {
+      return OutputTypeRefType.fromJson({
+        'value': value,
+        'runtimeType': runtimeType,
+      });
     }
 
     return OutputTypeRefType.fromJson({
@@ -505,9 +508,9 @@ class _OutputTypeRefTypeConverter
   @override
   Object toJson(OutputTypeRefType object) {
     return switch (object) {
-      StringOutputTypeRefType object => object.value,
-      ObjectOutputTypeRefType object => object.value.toJson(),
-      EnumOutputTypeRefType object => object.value.toJson(),
+      StringOutputTypeRefType(value: final value) => value,
+      ObjectOutputTypeRefType(value: final outout) => outout.toJson(),
+      EnumOutputTypeRefType(value: final enum_) => enum_.toJson(),
     };
   }
 }
