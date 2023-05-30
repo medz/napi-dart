@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/odroe/prisma-generator-helper/compare/prisma_generator_helper-v1.1.1...prisma_generator_helper-v1.2.0) (2023-05-30)
+
+
+### Features
+
+* Adapt Dart 3 sealed match ([098fae5](https://github.com/odroe/prisma-generator-helper/commit/098fae51b5d5a14221659c7f7cca4889fdbe663e))
+* **dmmf:** Refactor and optimize sealed ([b9366c3](https://github.com/odroe/prisma-generator-helper/commit/b9366c3cd6b58c91ef27c8e0544c88b41f961845))
+
+
+### Bug Fixes
+
+* Fix missing `EnvValue.toJson` method ([098fae5](https://github.com/odroe/prisma-generator-helper/commit/098fae51b5d5a14221659c7f7cca4889fdbe663e))
+
 ## [1.1.1](https://github.com/odroe/prisma-generator-helper/compare/v1.1.0...v1.1.1) (2023-05-29)
 
 
