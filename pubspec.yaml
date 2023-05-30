@@ -1,7 +1,7 @@
 name: prisma_generator_helper
 description: >-
   Prisma generator helper to quickly build Prisma generators.
-version: 1.2.0
+version: 1.2.1
 repository: https://github.com/odroe/prisma-generator-helper
 
 funding:

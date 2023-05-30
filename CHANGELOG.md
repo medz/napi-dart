@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/odroe/prisma-generator-helper/compare/prisma_generator_helper-v1.2.0...prisma_generator_helper-v1.2.1) (2023-05-30)
+
+
+### Bug Fixes
+
+* **dmmf:** Fixed field kind enum type origin value ([211ce5a](https://github.com/odroe/prisma-generator-helper/commit/211ce5ab9f359757ec2b036cf162ccd852dc617a))
+
 ## [1.2.0](https://github.com/odroe/prisma-generator-helper/compare/prisma_generator_helper-v1.1.1...prisma_generator_helper-v1.2.0) (2023-05-30)
 
 
