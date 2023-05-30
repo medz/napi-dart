@@ -4,6 +4,10 @@ description: >-
 version: 1.2.0
 repository: https://github.com/odroe/prisma-generator-helper
 
+funding:
+  - https://github.com/sponsors/odroe
+  - https://opencollective.com/openodroe
+
 environment:
   sdk: ^3.0.0
 
