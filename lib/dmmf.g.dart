@@ -200,55 +200,6 @@ Map<String, dynamic> _$$_OtherOperationsToJson(_$_OtherOperations instance) =>
       'write': instance.write,
     };
 
-_$_ModelMapping _$$_ModelMappingFromJson(Map<String, dynamic> json) =>
-    _$_ModelMapping(
-      model: json['model'] as String,
-      plural: json['plural'] as String?,
-      findUnique: _modelMappingActionValueReader(json, 'findUnique') as String?,
-      findUniqueOrThrow:
-          _modelMappingActionValueReader(json, 'findUniqueOrThrow') as String?,
-      findFirst: _modelMappingActionValueReader(json, 'findFirst') as String?,
-      findFirstOrThrow:
-          _modelMappingActionValueReader(json, 'findFirstOrThrow') as String?,
-      findMany: _modelMappingActionValueReader(json, 'findMany') as String?,
-      create: _modelMappingActionValueReader(json, 'create') as String?,
-      createMany: _modelMappingActionValueReader(json, 'createMany') as String?,
-      update: _modelMappingActionValueReader(json, 'update') as String?,
-      updateMany: _modelMappingActionValueReader(json, 'updateMany') as String?,
-      upsert: _modelMappingActionValueReader(json, 'upsert') as String?,
-      delete: _modelMappingActionValueReader(json, 'delete') as String?,
-      deleteMany: _modelMappingActionValueReader(json, 'deleteMany') as String?,
-      aggregate: _modelMappingActionValueReader(json, 'aggregate') as String?,
-      groupBy: _modelMappingActionValueReader(json, 'groupBy') as String?,
-      count: _modelMappingActionValueReader(json, 'count') as String?,
-      findRaw: _modelMappingActionValueReader(json, 'findRaw') as String?,
-      aggregateRaw:
-          _modelMappingActionValueReader(json, 'aggregateRaw') as String?,
-    );
-
-Map<String, dynamic> _$$_ModelMappingToJson(_$_ModelMapping instance) =>
-    <String, dynamic>{
-      'model': instance.model,
-      'plural': instance.plural,
-      'findUnique': instance.findUnique,
-      'findUniqueOrThrow': instance.findUniqueOrThrow,
-      'findFirst': instance.findFirst,
-      'findFirstOrThrow': instance.findFirstOrThrow,
-      'findMany': instance.findMany,
-      'create': instance.create,
-      'createMany': instance.createMany,
-      'update': instance.update,
-      'updateMany': instance.updateMany,
-      'upsert': instance.upsert,
-      'delete': instance.delete,
-      'deleteMany': instance.deleteMany,
-      'aggregate': instance.aggregate,
-      'groupBy': instance.groupBy,
-      'count': instance.count,
-      'findRaw': instance.findRaw,
-      'aggregateRaw': instance.aggregateRaw,
-    };
-
 _$_Schema _$$_SchemaFromJson(Map<String, dynamic> json) => _$_Schema(
       rootQueryType: json['rootQueryType'] as String?,
       rootMutationType: json['rootMutationType'] as String?,
@@ -614,4 +565,53 @@ Map<String, dynamic> _$$_FieldRefTypeToJson(_$_FieldRefType instance) =>
       'name': instance.name,
       'allowTypes': instance.allowTypes,
       'fields': instance.fields,
+    };
+
+_$_ModelMapping _$$_ModelMappingFromJson(Map<String, dynamic> json) =>
+    _$_ModelMapping(
+      model: json['model'] as String,
+      plural: json['plural'] as String?,
+      findUnique: _modelMappingActionValueReader(json, 'findUnique') as String?,
+      findUniqueOrThrow:
+          _modelMappingActionValueReader(json, 'findUniqueOrThrow') as String?,
+      findFirst: _modelMappingActionValueReader(json, 'findFirst') as String?,
+      findFirstOrThrow:
+          _modelMappingActionValueReader(json, 'findFirstOrThrow') as String?,
+      findMany: _modelMappingActionValueReader(json, 'findMany') as String?,
+      create: _modelMappingActionValueReader(json, 'create') as String?,
+      createMany: _modelMappingActionValueReader(json, 'createMany') as String?,
+      update: _modelMappingActionValueReader(json, 'update') as String?,
+      updateMany: _modelMappingActionValueReader(json, 'updateMany') as String?,
+      upsert: _modelMappingActionValueReader(json, 'upsert') as String?,
+      delete: _modelMappingActionValueReader(json, 'delete') as String?,
+      deleteMany: _modelMappingActionValueReader(json, 'deleteMany') as String?,
+      aggregate: _modelMappingActionValueReader(json, 'aggregate') as String?,
+      groupBy: _modelMappingActionValueReader(json, 'groupBy') as String?,
+      count: _modelMappingActionValueReader(json, 'count') as String?,
+      findRaw: _modelMappingActionValueReader(json, 'findRaw') as String?,
+      aggregateRaw:
+          _modelMappingActionValueReader(json, 'aggregateRaw') as String?,
+    );
+
+Map<String, dynamic> _$$_ModelMappingToJson(_$_ModelMapping instance) =>
+    <String, dynamic>{
+      'model': instance.model,
+      'plural': instance.plural,
+      'findUnique': instance.findUnique,
+      'findUniqueOrThrow': instance.findUniqueOrThrow,
+      'findFirst': instance.findFirst,
+      'findFirstOrThrow': instance.findFirstOrThrow,
+      'findMany': instance.findMany,
+      'create': instance.create,
+      'createMany': instance.createMany,
+      'update': instance.update,
+      'updateMany': instance.updateMany,
+      'upsert': instance.upsert,
+      'delete': instance.delete,
+      'deleteMany': instance.deleteMany,
+      'aggregate': instance.aggregate,
+      'groupBy': instance.groupBy,
+      'count': instance.count,
+      'findRaw': instance.findRaw,
+      'aggregateRaw': instance.aggregateRaw,
     };

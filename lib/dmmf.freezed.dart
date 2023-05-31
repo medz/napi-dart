@@ -821,264 +821,6 @@ abstract class _OtherOperations implements OtherOperations {
   List<String> get write;
 }
 
-ModelMapping _$ModelMappingFromJson(Map<String, dynamic> json) {
-  return _ModelMapping.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ModelMapping {
-  String get model => throw _privateConstructorUsedError;
-  String? get plural => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findUnique => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findUniqueOrThrow => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findFirst => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findFirstOrThrow => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findMany => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get create => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get createMany => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get update => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get updateMany => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get upsert => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get delete => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get deleteMany => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get aggregate => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get groupBy => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get count => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findRaw => throw _privateConstructorUsedError;
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get aggregateRaw => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_ModelMapping implements _ModelMapping {
-  const _$_ModelMapping(
-      {required this.model,
-      this.plural,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.findUnique,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.findUniqueOrThrow,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.findFirst,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.findFirstOrThrow,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.findMany,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.create,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.createMany,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.update,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.updateMany,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.upsert,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.delete,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.deleteMany,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.aggregate,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.groupBy,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.count,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.findRaw,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          this.aggregateRaw});
-
-  factory _$_ModelMapping.fromJson(Map<String, dynamic> json) =>
-      _$$_ModelMappingFromJson(json);
-
-  @override
-  final String model;
-  @override
-  final String? plural;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? findUnique;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? findUniqueOrThrow;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? findFirst;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? findFirstOrThrow;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? findMany;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? create;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? createMany;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? update;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? updateMany;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? upsert;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? delete;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? deleteMany;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? aggregate;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? groupBy;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? count;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? findRaw;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  final String? aggregateRaw;
-
-  @override
-  String toString() {
-    return 'ModelMapping(model: $model, plural: $plural, findUnique: $findUnique, findUniqueOrThrow: $findUniqueOrThrow, findFirst: $findFirst, findFirstOrThrow: $findFirstOrThrow, findMany: $findMany, create: $create, createMany: $createMany, update: $update, updateMany: $updateMany, upsert: $upsert, delete: $delete, deleteMany: $deleteMany, aggregate: $aggregate, groupBy: $groupBy, count: $count, findRaw: $findRaw, aggregateRaw: $aggregateRaw)';
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_ModelMappingToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ModelMapping implements ModelMapping {
-  const factory _ModelMapping(
-      {required final String model,
-      final String? plural,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? findUnique,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? findUniqueOrThrow,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? findFirst,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? findFirstOrThrow,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? findMany,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? create,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? createMany,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? update,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? updateMany,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? upsert,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? delete,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? deleteMany,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? aggregate,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? groupBy,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? count,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? findRaw,
-      @JsonKey(readValue: _modelMappingActionValueReader)
-          final String? aggregateRaw}) = _$_ModelMapping;
-
-  factory _ModelMapping.fromJson(Map<String, dynamic> json) =
-      _$_ModelMapping.fromJson;
-
-  @override
-  String get model;
-  @override
-  String? get plural;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findUnique;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findUniqueOrThrow;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findFirst;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findFirstOrThrow;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findMany;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get create;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get createMany;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get update;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get updateMany;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get upsert;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get delete;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get deleteMany;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get aggregate;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get groupBy;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get count;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get findRaw;
-  @override
-  @JsonKey(readValue: _modelMappingActionValueReader)
-  String? get aggregateRaw;
-}
-
 Schema _$SchemaFromJson(Map<String, dynamic> json) {
   return _Schema.fromJson(json);
 }
@@ -2973,4 +2715,262 @@ abstract class _FieldRefType implements FieldRefType {
   List<OutputTypeRef> get allowTypes;
   @override
   List<SchemaArg> get fields;
+}
+
+ModelMapping _$ModelMappingFromJson(Map<String, dynamic> json) {
+  return _ModelMapping.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ModelMapping {
+  String get model => throw _privateConstructorUsedError;
+  String? get plural => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findUnique => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findUniqueOrThrow => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findFirst => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findFirstOrThrow => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findMany => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get create => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get createMany => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get update => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get updateMany => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get upsert => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get delete => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get deleteMany => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get aggregate => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get groupBy => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get count => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findRaw => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get aggregateRaw => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ModelMapping implements _ModelMapping {
+  const _$_ModelMapping(
+      {required this.model,
+      this.plural,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.findUnique,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.findUniqueOrThrow,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.findFirst,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.findFirstOrThrow,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.findMany,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.create,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.createMany,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.update,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.updateMany,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.upsert,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.delete,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.deleteMany,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.aggregate,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.groupBy,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.count,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.findRaw,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          this.aggregateRaw});
+
+  factory _$_ModelMapping.fromJson(Map<String, dynamic> json) =>
+      _$$_ModelMappingFromJson(json);
+
+  @override
+  final String model;
+  @override
+  final String? plural;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? findUnique;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? findUniqueOrThrow;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? findFirst;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? findFirstOrThrow;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? findMany;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? create;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? createMany;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? update;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? updateMany;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? upsert;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? delete;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? deleteMany;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? aggregate;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? groupBy;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? count;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? findRaw;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  final String? aggregateRaw;
+
+  @override
+  String toString() {
+    return 'ModelMapping(model: $model, plural: $plural, findUnique: $findUnique, findUniqueOrThrow: $findUniqueOrThrow, findFirst: $findFirst, findFirstOrThrow: $findFirstOrThrow, findMany: $findMany, create: $create, createMany: $createMany, update: $update, updateMany: $updateMany, upsert: $upsert, delete: $delete, deleteMany: $deleteMany, aggregate: $aggregate, groupBy: $groupBy, count: $count, findRaw: $findRaw, aggregateRaw: $aggregateRaw)';
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ModelMappingToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ModelMapping implements ModelMapping {
+  const factory _ModelMapping(
+      {required final String model,
+      final String? plural,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? findUnique,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? findUniqueOrThrow,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? findFirst,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? findFirstOrThrow,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? findMany,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? create,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? createMany,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? update,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? updateMany,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? upsert,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? delete,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? deleteMany,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? aggregate,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? groupBy,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? count,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? findRaw,
+      @JsonKey(readValue: _modelMappingActionValueReader)
+          final String? aggregateRaw}) = _$_ModelMapping;
+
+  factory _ModelMapping.fromJson(Map<String, dynamic> json) =
+      _$_ModelMapping.fromJson;
+
+  @override
+  String get model;
+  @override
+  String? get plural;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findUnique;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findUniqueOrThrow;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findFirst;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findFirstOrThrow;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findMany;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get create;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get createMany;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get update;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get updateMany;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get upsert;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get delete;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get deleteMany;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get aggregate;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get groupBy;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get count;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get findRaw;
+  @override
+  @JsonKey(readValue: _modelMappingActionValueReader)
+  String? get aggregateRaw;
 }

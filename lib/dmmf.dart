@@ -176,53 +176,6 @@ class OtherOperations with _$OtherOperations {
       _$OtherOperationsFromJson(json);
 }
 
-@freezed
-class ModelMapping with _$ModelMapping {
-  const factory ModelMapping({
-    required String model,
-    String? plural,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? findUnique,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-    String? findUniqueOrThrow,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? findFirst,
-    @JsonKey(readValue: _modelMappingActionValueReader)
-    String? findFirstOrThrow,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? findMany,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? create,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? createMany,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? update,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? updateMany,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? upsert,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? delete,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? deleteMany,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? aggregate,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? groupBy,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? count,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? findRaw,
-    @JsonKey(readValue: _modelMappingActionValueReader) String? aggregateRaw,
-  }) = _ModelMapping;
-
-  factory ModelMapping.fromJson(Map<String, dynamic> json) =>
-      _$ModelMappingFromJson(json);
-}
-
-/// Model mapping action `one` suffix value reader.
-_modelMappingActionValueReader(Map json, String key) {
-  if (json.containsKey(key)) return json[key];
-
-  final keyWithOneSuffix = '${key}One';
-  if (json.containsKey(keyWithOneSuffix)) return json[keyWithOneSuffix];
-
-  final suffix = key.substring(key.length - 3).toLowerCase();
-  if (suffix == 'one') {
-    final keyWithoutOneSuffix = key.substring(0, key.length - 3);
-
-    return _modelMappingActionValueReader(json, keyWithoutOneSuffix);
-  }
-
-  return null;
-}
-
 /// @see https://github.com/prisma/prisma/blob/main/packages/generator-helper/src/dmmf.ts#L102
 @freezed
 class Schema with _$Schema {
@@ -535,4 +488,93 @@ class FieldRefType with _$FieldRefType {
 
   factory FieldRefType.fromJson(Map<String, dynamic> json) =>
       _$FieldRefTypeFromJson(json);
+}
+
+/// @see https://github.com/prisma/prisma/blob/main/packages/generator-helper/src/dmmf.ts#L219
+@freezed
+class ModelMapping with _$ModelMapping {
+  const factory ModelMapping({
+    required String model,
+    String? plural,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? findUnique,
+    @JsonKey(readValue: _modelMappingActionValueReader)
+    String? findUniqueOrThrow,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? findFirst,
+    @JsonKey(readValue: _modelMappingActionValueReader)
+    String? findFirstOrThrow,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? findMany,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? create,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? createMany,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? update,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? updateMany,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? upsert,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? delete,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? deleteMany,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? aggregate,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? groupBy,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? count,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? findRaw,
+    @JsonKey(readValue: _modelMappingActionValueReader) String? aggregateRaw,
+  }) = _ModelMapping;
+
+  factory ModelMapping.fromJson(Map<String, dynamic> json) =>
+      _$ModelMappingFromJson(json);
+}
+
+/// Model mapping action `one` suffix value reader.
+_modelMappingActionValueReader(Map json, String key) {
+  if (json.containsKey(key)) return json[key];
+
+  final keyWithOneSuffix = '${key}One';
+  if (json.containsKey(keyWithOneSuffix)) return json[keyWithOneSuffix];
+
+  final suffix = key.substring(key.length - 3).toLowerCase();
+  if (suffix == 'one') {
+    final keyWithoutOneSuffix = key.substring(0, key.length - 3);
+
+    return _modelMappingActionValueReader(json, keyWithoutOneSuffix);
+  }
+
+  return null;
+}
+
+/// @see https://github.com/prisma/prisma/blob/main/packages/generator-helper/src/dmmf.ts#L241
+/// Model Action
+enum ModelAction {
+  findUnique,
+  findUniqueOrThrow,
+  findFirst,
+  findFirstOrThrow,
+  findMany,
+  create,
+  createMany,
+  update,
+  updateMany,
+  upsert,
+  delete,
+  deleteMany,
+  groupBy,
+  count,
+  aggregate,
+  findRaw,
+  aggregateRaw;
+
+  /// Read model action protocol name.
+  String? protocolName(ModelMapping mapping) {
+    final json = mapping.toJson();
+    final action = json[name];
+    if (action is String) return action;
+
+    return null;
+  }
+
+  /// Generate model action protocol name map.
+  static Map<String, String> protocolNamesMap(ModelMapping mapping) {
+    final entries = ModelAction.values
+        .map((e) => (e.name, e.protocolName(mapping)))
+        .whereType<(String, String)>()
+        .map((e) => MapEntry(e.$1, e.$2));
+
+    return Map.fromEntries(entries);
+  }
 }
