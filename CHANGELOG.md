@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.4](https://github.com/odroe/prisma-generator-helper/compare/prisma_generator_helper-v1.2.2...prisma_generator_helper-v1.2.4) (2023-05-31)
+
+
+### Features
+
+* **dmmf:** Add model action enum and helper ([e122e5f](https://github.com/odroe/prisma-generator-helper/commit/e122e5f8baeea3717f5d24eb28ce9480324f469c))
+
 ## [1.2.2](https://github.com/odroe/prisma-generator-helper/compare/prisma_generator_helper-v1.2.1...prisma_generator_helper-v1.2.2) (2023-05-30)
 
 
