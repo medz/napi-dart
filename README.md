@@ -1,43 +1,39 @@
-# Prisma Generator helper
+<!-- 
+This README describes the package. If you publish this package to pub.dev,
+this README's contents appear on the landing page for your package.
 
-Prisma generator helper to quickly build Prisma generators.
+For information about how to write a good package README, see the guide for
+[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
 
-## Installation
+For general information about developing packages, see the Dart guide for
+[creating packages](https://dart.dev/guides/libraries/create-library-packages)
+and the Flutter guide for
+[developing packages and plugins](https://flutter.dev/developing-packages). 
+-->
 
-```bash
-dart pub add prisma_generator_helper
-```
+TODO: Put a short description of the package here that helps potential users
+know whether this package might be useful for them.
+
+## Features
+
+TODO: List what your package can do. Maybe include images, gifs, or videos.
+
+## Getting started
+
+TODO: List prerequisites and provide or point to information on how to
+start using the package.
 
 ## Usage
 
+TODO: Include short and useful examples for package users. Add longer examples
+to `/example` folder. 
+
 ```dart
-import 'package:prisma_generator_helper/prisma_generator_helper.dart';
-
-/// Example generator.
-final class ExampleGenerator implements Handler {
-  @override
-  Future<void> onGenerate(GeneratorOptions options) async {
-    /// Implement the generator.
-    /// This method will be called when the generator is invoked.
-  }
-
-  @override
-  Future<GeneratorManifest> onManifest(GeneratorConfig config) async {
-    return GeneratorManifest(
-      prettyName: 'Example generator',
-    );
-  }
-}
-
-Future<void> main() => generator(ExampleGenerator());
+const like = 'sample';
 ```
 
-## Sponsors
+## Additional information
 
-Prisma generator helper is an [MIT licensed](LICENSE) open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider [sponsoring Odroe development](https://github.com/sponsors/odroe).
-
-<p align="center">
-  <a target="_blank" href="https://github.com/sponsors/odroe#sponsors">
-    <img alt="sponsors" src="https://github.com/odroe/.github/raw/main/sponsors.svg">
-  </a>
-</p>
+TODO: Tell users more about the package: where to find more information, how to 
+contribute to the package, how to file issues, what response they can expect 
+from the package authors, and more.
