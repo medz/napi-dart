@@ -1,5 +1,5 @@
 import '../ext/transform.dart';
-import '../external.dart';
+import '../dsv.dart';
 import '../validator.dart';
 
 extension StringExternal on External {
@@ -36,12 +36,11 @@ extension StringValodator on Validator<String> {
   }
 
   /// Create [String] length validator.
-  Validator<String> length(int min, int max, {String? message}) {
+  Validator<String> length(int length, {String? message}) {
     return transform((context, value) {
-      if (value.length >= min && value.length <= max) return value;
+      if (value.length == length) return value;
 
-      throw context.error(
-          message ?? 'Value must be between $min and $max characters long');
+      throw context.error(message ?? 'Value must be $length characters');
     });
   }
 

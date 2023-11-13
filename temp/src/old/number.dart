@@ -1,5 +1,5 @@
 import '../ext/transform.dart';
-import '../external.dart';
+import '../dsv.dart';
 import '../validator.dart';
 
 typedef _Int = int;
