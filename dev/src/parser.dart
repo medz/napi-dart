@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'context.dart';
 import 'validator.dart';
 
@@ -10,27 +12,29 @@ extension DsvParse<T> on DsvValidator<T> {
 }
 
 abstract interface class DsvParser<T> {
+  abstract final DsvValidator<T> validator;
+
   /// Synchronously parse the given [value] using the [DsvValidator] and return
   /// the result.
   T call(Object? value);
-
-  /// Asynchronously parse the given [value] using the [DsvValidator] and
-  /// return the result.
-  Future<T> async(Object? value);
 }
 
-class _Parser<T> implements DsvParser<T> {
-  final DsvValidator<T> validator;
-
-  const _Parser(this.validator);
-
-  @override
-  Future<T> async(Object? value) {
+extension DsvAsyncParser<T> on DsvParser<FutureOr<T>> {
+  /// Asynchronously parse the given [value] using the [DsvValidator] and
+  /// return the result.
+  Future<T> async(Object? value) async {
     final context = _Context(isAsynchronous: true);
     final result = validator.handle(context, value);
 
-    return Future.value(result);
+    return await result;
   }
+}
+
+class _Parser<T> implements DsvParser<T> {
+  @override
+  final DsvValidator<T> validator;
+
+  const _Parser(this.validator);
 
   @override
   T call(Object? value) {

@@ -16,10 +16,12 @@ class DsvException implements Exception {
   final String message;
   final DsvContext context;
 
+  Iterable<String> get paths => context.paths;
+
   const DsvException(this.context, this.message);
 
   @override
   String toString() {
-    return 'DSV Exception: $message at ${context.paths.join('.')}';
+    return 'DSV Exception: $message at ${paths.join('.')}';
   }
 }

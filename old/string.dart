@@ -1,6 +1,6 @@
-import '../ext/transform.dart';
-import '../dsv.dart';
-import '../validator.dart';
+import '../dev/src/ext/transform.dart';
+import '../dev/src/dsv.dart';
+import '../dev/src/validator.dart';
 
 extension StringExternal on External {
   /// Create a [String] validator.

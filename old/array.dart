@@ -1,7 +1,7 @@
-import '../context.dart';
+import '../dev/src/context.dart';
 
-import '../validator.dart';
-import '../dsv.dart';
+import '../dev/src/validator.dart';
+import '../dev/src/dsv.dart';
 
 class ArrayValidator<T> implements Validator<List<T>> {
   final Validator<T>? validator;
